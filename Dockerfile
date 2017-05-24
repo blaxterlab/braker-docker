@@ -19,7 +19,7 @@ RUN tar -xzf augustus-3.2.3.tar.gz
 
 RUN apt-get install bamtools -y -q
 
-RUN wget http://bioinf.uni-greifswald.de/augustus/binaries/BRAKER1_v1.10.tar.gz
+RUN wget http://bioinf.uni-greifswald.de/augustus/binaries/BRAKER1_v1.10.tar.gz 2>/dev/null
 
 RUN tar -xzf BRAKER1_v1.10.tar.gz
 
