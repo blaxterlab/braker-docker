@@ -32,9 +32,15 @@ RUN apt-get install samtools -y -q
 RUN cpanm File::Spec::Functions Hash::Merge List::Util Logger::Simple \
       Module::Load::Conditional Parallel::ForkManager POSIX Scalar::Util::Numeric YAML
 
+RUN adduser --disabled-password --gecos '' dockeruser
+RUN mkdir /data
+RUN chown -R dockeruser /data
+RUN chmod a+w -R /augustus-3.2.3/config
+USER dockeruser
+WORKDIR /data
+
 ENV PATH $PATH:/BRAKER1_v1.10:/augustus-3.2.3/bin/
 ENV PATH $PATH:/augustus-3.2.3/scripts:/gm_et_linux_64/gmes_petap/
-
 ENV AUGUSTUS_CONFIG_PATH /augustus-3.2.3/config
 ENV GENEMARK_PATH /gm_et_linux_64/gmes_petap/
 ENV BAMTOOLS_PATH /usr/bin/
