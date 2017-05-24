@@ -10,7 +10,7 @@ git clone https://github.com/blaxterlab/braker-docker.git
 cd braker-docker
 ```
 
-2. Download your OWN copy of the genemark key which you can get from http://exon.gatech.edu/GeneMark/license_download.cgi (pick the GeneMark-ES / ET v.4.33 LINUX 64 option for this docker) and save the gm_key64.gz file in the braker-docker folder
+2. Download your OWN copy of the genemark executables and key which you can get from http://exon.gatech.edu/GeneMark/license_download.cgi (pick the GeneMark-ES / ET v.4.33 LINUX 64 option for this docker) and save gm_key_64.gz and gm_et_linux_64.tar.gz in the braker-docker folder
 
 3. Run docker build:
 
