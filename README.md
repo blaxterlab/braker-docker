@@ -25,7 +25,7 @@ docker run --rm \
   -u $UID:$GROUPS \
   -v `pwd`:/data \
   braker \
-  braker.pl --species=CPLIC --UTR=on --cores=8 \
+  braker.pl --species=YOURSPECIESNAME --UTR=on --cores=8 \
   --genome=/data/genome.fasta \
   --bam=/data/aligned.bam
 ```
