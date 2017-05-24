@@ -9,11 +9,7 @@ RUN apt-get install -y -q \
     zlibc gcc-multilib apt-utils zlib1g-dev python \
     cmake tcsh build-essential g++ git wget gzip perl cpanminus
 
-COPY gm_key_64.gz /
-
 COPY gm_et_linux_64.tar.gz /
-
-RUN zcat gm_key_64.gz > ~/.gm_key
 
 RUN tar -xzf gm_et_linux_64.tar.gz
 
@@ -38,6 +34,9 @@ RUN chown -R dockeruser /data
 RUN chmod a+w -R /augustus-3.2.3/config
 USER dockeruser
 WORKDIR /data
+
+COPY gm_key_64.gz ~/
+RUN zcat ~/gm_key_64.gz > ~/.gm_key
 
 ENV PATH $PATH:/BRAKER1_v1.10:/augustus-3.2.3/bin/
 ENV PATH $PATH:/augustus-3.2.3/scripts:/gm_et_linux_64/gmes_petap/
